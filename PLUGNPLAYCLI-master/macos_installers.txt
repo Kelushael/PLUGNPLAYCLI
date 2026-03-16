@@ -1,0 +1,8 @@
+# macOS Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew install cmake git && curl -fsSL https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.sh | bash
+
+# macOS with direct setup
+curl -fsSL https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.sh | bash
+
+# macOS via direct download
+curl -L https://github.com/Kelushael/PLUGNPLAYCLI/archive/refs/heads/master.zip -o framework.zip && unzip framework.zip && cd PLUGNPLAYCLI-master && ./install_unix.sh

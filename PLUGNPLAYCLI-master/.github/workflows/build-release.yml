@@ -1,0 +1,102 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup MSVC
+      uses: microsoft/setup-msvc@v1
+
+    - name: Install CMake
+      run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
+
+    - name: Create Build Directory
+      run: mkdir build
+
+    - name: Configure CMake
+      run: cmake -B build -S .
+
+    - name: Build
+      run: cmake --build build --config Release
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: plugnplay-windows
+        path: build/Release/plugnplay.exe
+
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      run: brew install cmake
+
+    - name: Create Build Directory
+      run: mkdir build
+
+    - name: Configure CMake
+      run: cmake -B build -S .
+
+    - name: Build
+      run: make -C build -j$(sysctl -n hw.ncpu)
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: plugnplay-macos
+        path: build/plugnplay
+
+  build-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      run: sudo apt-get update && sudo apt-get install -y build-essential cmake
+
+    - name: Create Build Directory
+      run: mkdir build
+
+    - name: Configure CMake
+      run: cmake -B build -S .
+
+    - name: Build
+      run: make -C build -j$(nproc)
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: plugnplay-linux
+        path: build/plugnplay
+
+  release:
+    needs: [build-windows, build-macos, build-ubuntu]
+    runs-on: ubuntu-latest
+
+    if: startsWith(github.ref, 'refs/tags/')
+
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          plugnplay-windows/plugnplay.exe
+          plugnplay-macos/plugnplay
+          plugnplay-linux/plugnplay
+        generate_release_notes: true

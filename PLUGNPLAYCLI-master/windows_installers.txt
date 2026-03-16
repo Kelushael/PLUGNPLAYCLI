@@ -1,0 +1,8 @@
+# Windows PowerShell (irm/iex)
+irm https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.ps1 | iex
+
+# Windows PowerShell (full)
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.ps1 | iex"
+
+# Windows CMD
+powershell -c "irm https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.ps1 | iex"

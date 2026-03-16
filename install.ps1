@@ -1,5 +1,5 @@
 # Universal Plug & Play Installer for PowerShell
-# Run with: irm https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.ps1 | iex
+# Run with: irm https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/master/install.ps1 | iex
 
 Write-Host "PLUG & PLAY FRAMEWORK - UNIVERSAL INSTALLER" -ForegroundColor Cyan
 Write-Host "===========================================" -ForegroundColor Cyan

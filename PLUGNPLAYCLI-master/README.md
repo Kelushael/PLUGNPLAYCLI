@@ -18,7 +18,7 @@ A plug-and-play executable that launches the complete Zaphod AI framework with f
 
 **🚀 ONE-LINER INSTALL (All OS):**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.sh | bash
 ```
 
 **That's it.** Auto-detects OS, installs dependencies, builds framework, downloads GLM-4-9B model, and sets you up for development!
