@@ -11,9 +11,6 @@ unzip -q framework.zip
 cd PLUGNPLAYCLI-master
 
 echo "✅ Download complete!"
-echo "Run the appropriate installer for your OS:"
-echo "  Windows: install_windows.bat"
-echo "  macOS/Linux: ./install_unix.sh"
-echo "  PowerShell: ./install_windows.ps1"
+echo "Run: cd PLUGNPLAYCLI-master && ./install_unix.sh"
 echo ""
-echo "🚀 Ready for setup!"
+echo "🚀 Ready for manual setup!"
