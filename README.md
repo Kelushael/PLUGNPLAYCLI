@@ -16,17 +16,24 @@ A plug-and-play executable that launches the complete Zaphod AI framework with f
 
 ### Quick Install (Recommended)
 
-**One-liner for all platforms:**
+**One-liner install:**
+
+**Linux/macOS:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kelushael/plugnplaycli/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.sh | bash
+```
+
+**Windows PowerShell:**
+```powershell
+irm https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install_windows.ps1 | iex
 ```
 
 ### Manual Installation
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/kelushael/plugnplaycli.git
-   cd plugnplaycli
+   git clone https://github.com/Kelushael/PLUGNPLAYCLI.git
+   cd PLUGNPLAYCLI
    ```
 
 2. **Setup dependencies (optional but recommended):**
