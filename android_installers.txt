@@ -1,0 +1,8 @@
+# Android Termux (pkg)
+pkg update && pkg install -y clang cmake git curl unzip && curl -fsSL https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.sh | bash
+
+# Android Termux (apt alternative)
+apt update && apt install -y clang cmake git curl unzip && curl -fsSL https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.sh | bash
+
+# Android Termux via direct download
+curl -L https://github.com/Kelushael/PLUGNPLAYCLI/archive/refs/heads/master.zip -o framework.zip && unzip framework.zip && cd PLUGNPLAYCLI-master && ./install_unix.sh

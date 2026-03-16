@@ -1,0 +1,14 @@
+# Ubuntu/Debian (apt)
+sudo apt update && sudo apt install -y build-essential cmake git curl unzip && curl -fsSL https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.sh | bash
+
+# CentOS/RHEL/Fedora (yum/dnf)
+sudo yum install -y gcc-c++ cmake git curl unzip || sudo dnf install -y gcc-c++ cmake git curl unzip && curl -fsSL https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.sh | bash
+
+# Arch Linux (pacman)
+sudo pacman -Syu --noconfirm base-devel cmake git curl unzip && curl -fsSL https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.sh | bash
+
+# Alpine Linux (apk)
+sudo apk add build-base cmake git curl unzip && curl -fsSL https://raw.githubusercontent.com/Kelushael/PLUGNPLAYCLI/main/install.sh | bash
+
+# Generic Linux via direct download
+curl -L https://github.com/Kelushael/PLUGNPLAYCLI/archive/refs/heads/master.zip -o framework.zip && unzip framework.zip && cd PLUGNPLAYCLI-master && ./install_unix.sh
