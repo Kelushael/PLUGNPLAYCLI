@@ -1,5 +1,5 @@
 @echo off
-echo Plug ^& Play Framework Installer for Windows
+echo Plug and Play Framework Installer for Windows
 echo =============================================
 
 REM Check if Visual Studio Build Tools are installed
